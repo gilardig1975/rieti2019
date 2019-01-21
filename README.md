@@ -6,6 +6,11 @@ Eclipse
 
 2. Select "Eclipse IDE for Enterprise Java Developers"
 
+3. Start workspace
+
+4. Configure WebSphere Liberty profile
+
+
 
 Websphere Liberty profile
 
@@ -14,7 +19,8 @@ Websphere Liberty profile
 2. Accept license and download
 
 3. To install all the Java EE 8 features, run:
-	bin/installUtility install javaee-8.0
+
+		bin/installUtility install javaee-8.0
 
 4. Additional support (optional)
 	Use installUtility (located in the wlp/bin folder) to install additional features from the Liberty Repository such as adminCenter-1.0, servlet-4.0, collectiveController-1.0:
@@ -54,3 +60,4 @@ Putty
 1. https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 2. Choose the "Windows Installer" msi
+
