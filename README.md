@@ -56,6 +56,9 @@ Cloud Foundry
 
 2. Follow the instructions for your operating system. For Windows Installation go to "1. Download the Windows installer."
 
+3. Push command
+
+		cf push SampleWeb -b liberty-for-java -p <serverName> -u none --hostname <domain>.eu-gb.mybluemix.net
 
 Putty
 
