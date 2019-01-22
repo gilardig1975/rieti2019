@@ -63,3 +63,17 @@ Putty
 
 2. Choose the "Windows Installer" msi
 
+
+Maven
+
+1. https://maven.apache.org/download.cgi
+
+2. Download binary version from the list
+
+
+Git
+
+1. https://git-scm.com/download/win
+
+2. Download installer from the list
+
