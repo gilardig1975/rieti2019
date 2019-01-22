@@ -10,7 +10,9 @@ Eclipse
 
 4. Configure WebSphere Liberty profile
 
+5. Help -> Market place -> Decompiler
 
+6. Organize Import / Code Formatter / Working Set
 
 Websphere Liberty profile
 
