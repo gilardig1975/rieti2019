@@ -1,0 +1,53 @@
+<server description="new server">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>webProfile-8.0</feature>
+		<feature>localConnector-1.0</feature>
+	</featureManager>
+
+	<!-- To access this server from a remote client add a host attribute to 
+		the following element, e.g. host="*" -->
+	<httpEndpoint httpPort="9080" httpsPort="9443"
+		id="defaultHttpEndpoint" />
+
+	<!-- Automatically expand WAR files and EAR files -->
+	<applicationManager autoExpand="true" />
+
+
+	<applicationMonitor updateTrigger="mbean" />
+
+	<basicRegistry>
+		<user password="{xor}Lz4sLChvLTs=" name="pigio"></user>
+		<user password="{xor}Lz4sLChvLTs=" name="cris"></user>
+		<user password="{xor}Lz4sLChvLTs=" name="simone"></user>
+		<group name="pigioFriends">
+			<member name="pigio" />
+			<member name="cris" />
+		</group>
+		<group name="theOthers">
+			<member name="simone" />
+		</group>
+	</basicRegistry>
+
+	<library id="dbDriver">
+		<file name="lib/db2jcc.jar"></file>
+	</library>
+	<webApplication id="SampleWeb" location="SampleWeb.war"
+		name="SampleWeb">
+
+		<application-bnd>
+			<security-role id="PIGIO_FRIENDS" name="PIGIO_FRIENDS">
+				<group name="pigioFriends"></group>
+			</security-role>
+			<security-role id="THE_OTHERS" name="THE_OTHERS">
+				<group name="theOthers"></group>
+			</security-role>
+			
+		</application-bnd>
+	</webApplication>
+	<dataSource jndiName="jdbc/cloud">
+        <jdbcDriver libraryRef="dbDriver"></jdbcDriver>
+        <properties.db2.jcc databaseName="cloud" serverName="localhost" portNumber="50000" user="administrator" password="{xor}Lz4sLChvLTs="/>
+    </dataSource>
+</server>
