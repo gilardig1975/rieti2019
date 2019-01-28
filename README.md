@@ -89,4 +89,18 @@ Event Streams | Message Hub
 1. https://console.bluemix.net/docs/services/EventStreams/index.html#getting_started
 
 
+Java Batch
+
+	<authorization-roles id="com.ibm.ws.batch">
+		<security-role name="batchAdmin">	
+			<special-subject type="EVERYONE"/>
+		</security-role>
+		<security-role name="batchSubmitter">
+			<special-subject type="EVERYONE"/>
+		</security-role>
+		<security-role name="batchMonitor">
+			<special-subject type="EVERYONE"/>
+		</security-role>
+	</authorization-roles>
+
 
