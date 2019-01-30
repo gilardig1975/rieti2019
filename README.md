@@ -104,6 +104,16 @@ Java Batch
 	</authorization-roles>
 
 
+Java Tutorial
+
+1. Thinking in Java (Bruce Eckel)
+
+
+JEE Tutorial
+
+1. https://javaee.github.io/tutorial/
+
+
 Spring
 
 1. Spring boot initializer: https://start.spring.io/
