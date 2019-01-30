@@ -104,3 +104,13 @@ Java Batch
 	</authorization-roles>
 
 
+Spring
+
+1. Spring boot initializer: https://start.spring.io/
+
+2. Spring boot reference guide: https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/reference/
+
+3. Spring reference guide
+
+	pdf: https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/pdf/
+	html: https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/
