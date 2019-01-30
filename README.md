@@ -140,3 +140,43 @@ Spring
 			<!--<context:component-scan base-package="it.sistinf.wave3.pippo" />-->
 
 		</beans>
+
+5.Sample interceptor configuration
+
+		<?xml version="1.0" encoding="UTF-8"?>
+		<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:aop="http://www.springframework.org/schema/aop"
+			xsi:schemaLocation="
+				http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+				http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+			">
+
+			<import resource="classpath:resources/st/applicationContext.xml"/>
+
+			<aop:aspectj-autoproxy/>
+
+			<bean id="serviceInterceptor" class="it.sistinf.wave3.spring.util.ServiceInterceptor" scope="singleton" /> 
+			<aop:config>
+				<aop:aspect ref="serviceInterceptor">
+					<!--
+						A business service is the execution of any method defined on a service
+						interface. This definition assumes that interfaces are placed in the
+						"service" package, and that implementation types are in sub-packages.
+
+						If you group service interfaces by functional area (for example,
+						in packages com.xyz.someapp.abc.service and com.xyz.someapp.def.service) then
+						the pointcut expression "execution(* com.xyz.someapp..service.*.*(..))"
+						could be used instead.
+
+						Alternatively, you can write the expression using the 'bean'
+						PCD, like so "bean(*Service)". (This assumes that you have
+						named your Spring service beans in a consistent fashion.)
+					-->
+					<aop:pointcut id="serviceExecution" expression="execution(public * it.sistinf.wave3.spring.mallo..*(..)))"/>
+					<aop:around pointcut-ref="serviceExecution" method="around"/>
+				</aop:aspect>
+			</aop:config>
+
+		</beans>
+
