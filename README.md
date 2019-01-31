@@ -180,3 +180,12 @@ Spring
 
 		</beans>
 
+
+5. Persistence configuration
+
+		<bean id="emf" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean"> 
+			<property name="persistenceUnitName" value="${persistence.unit.name}" />
+		</bean>
+		<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+			<property name="entityManagerFactory" ref="emf" />
+		</bean>
